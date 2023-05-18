@@ -48,3 +48,14 @@ def decode_word(word)
   decoded_chars << decode_char(c)
   decoded_chars.join
 end
+def decode(message)
+  words = message.split('   ')
+  decoded_words = []
+  words.each do |word|
+    words = decode_word(word)
+    decoded_words << words
+  end
+  decoded_words.join(' ')
+end
+
+# puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...") // A BOX FULL OF RUBIES
